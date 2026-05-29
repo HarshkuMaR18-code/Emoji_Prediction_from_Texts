@@ -1,21 +1,20 @@
-# 😊 Emoji Prediction from Text using NLP and Deep Learning
+# 😊 Emoji Prediction from Text
 
 ## 📌 Overview
 
-Emoji Prediction from Text is a Natural Language Processing (NLP) project that automatically predicts the most appropriate emoji for a given sentence. The model uses pre-trained GloVe word embeddings and LSTM neural networks to understand the semantic meaning and context of text before assigning an emoji label.
+Emoji Prediction from Text is a Deep Learning and Natural Language Processing (NLP) project that predicts the most suitable emoji for a given sentence. The model uses pre-trained GloVe word embeddings and LSTM networks to understand sentence meaning and classify text into emoji categories.
 
-This project demonstrates how deep learning can enhance text-based communication by making emoji recommendations based on sentence meaning rather than simple keyword matching.
+This project demonstrates how word embeddings and sequence models can be used to build intelligent and context-aware emoji recommendation systems.
 
 ---
 
 ## 🚀 Features
 
-* Predict emojis directly from text sentences.
-* Uses pre-trained GloVe 50-dimensional word embeddings.
+* Predict emojis from text sentences.
+* Uses pre-trained GloVe 50-dimensional embeddings.
 * Stacked LSTM architecture for sequence learning.
 * Experiment tracking with MLflow and DagsHub.
-* End-to-end NLP and Deep Learning workflow.
-* Handles unseen words through semantic word representations.
+* End-to-end NLP pipeline from preprocessing to prediction.
 
 ---
 
@@ -30,24 +29,24 @@ Word Index Conversion
       ↓
 GloVe Embedding Layer
       ↓
-LSTM (128 Units)
+LSTM (128)
       ↓
 Dropout (0.5)
       ↓
-LSTM (128 Units)
+LSTM (128)
       ↓
 Dropout (0.5)
       ↓
-Dense Layer (5 Classes)
+Dense Layer
       ↓
 Softmax
       ↓
-Predicted Emoji
+Emoji Prediction
 ```
 
 ---
 
-## 🧠 Technologies Used
+## 🛠️ Technologies Used
 
 * Python
 * NumPy
@@ -61,11 +60,11 @@ Predicted Emoji
 
 ## 📂 Dataset
 
-The dataset consists of sentences paired with emoji labels. The model learns the relationship between sentence meaning and corresponding emojis.
+The dataset contains text sentences paired with emoji labels.
 
-Example:
+Examples:
 
-| Text                | Emoji |
+| Sentence            | Emoji |
 | ------------------- | ----- |
 | I love you          | ❤️    |
 | Let's play football | ⚽     |
@@ -75,14 +74,28 @@ Example:
 
 ---
 
-## ⚙️ Installation
+## 📥 Download GloVe Embeddings
 
-Clone the repository:
+This repository does not include the GloVe file due to its large size.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/Emoji_Prediction_from_Text.git
-cd Emoji_Prediction_from_Text
+1. Download GloVe from:
+   https://nlp.stanford.edu/projects/glove/
+
+2. Extract:
+
+```text
+glove.6B.50d.txt
 ```
+
+3. Place it in:
+
+```text
+data/Files/glove.6B.50d.txt
+```
+
+---
+
+## ▶️ Run the Project
 
 Install dependencies:
 
@@ -90,53 +103,36 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Download GloVe embeddings from:
-
-https://nlp.stanford.edu/projects/glove/
-
-Place `glove.6B.50d.txt` in the required directory before running the project.
-
----
-
-## ▶️ Running the Project
+Run:
 
 ```bash
 python mlflow_tracking.py
 ```
 
-The script will:
-
-* Load the dataset
-* Load GloVe embeddings
-* Train the LSTM model
-* Evaluate model performance
-* Log experiments using MLflow and DagsHub
-
 ---
 
 ## 📊 Experiment Tracking
 
-This project integrates:
+Experiments are tracked using:
 
-* **MLflow** for logging metrics and parameters
-* **DagsHub** for experiment management and model tracking
+* MLflow
+* DagsHub
 
-Tracked information includes:
+Logged information includes:
 
-* Training accuracy
-* Hyperparameters
+* Accuracy
+* Parameters
 * Model artifacts
-* Experiment history
+* Training runs
 
 ---
 
 ## 🔮 Future Improvements
 
-* Support additional emoji classes
-* Use Bidirectional LSTM models
-* Experiment with BERT and Transformer models
+* Support more emoji classes
+* Use Bidirectional LSTMs
+* Experiment with Transformer models (BERT)
 * Deploy as a web application
-* Build a real-time emoji recommendation system
 
 ---
 
@@ -144,6 +140,7 @@ Tracked information includes:
 
 **Harsh Kumar**
 
-Machine Learning | Deep Learning | MLOps Enthusiast
+Machine Learning | Deep Learning | MLOps
 
-⭐ If you found this project useful, consider giving it a star on GitHub!
+⭐ If you found this project useful, consider giving it a star on GitHub.
+
